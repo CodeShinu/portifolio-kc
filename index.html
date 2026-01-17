@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kauã Carlos Leme | Dev</title>
+
+<meta name="description" content="Portfólio de Kauã Carlos Leme, desenvolvedor back-end e estudante de Ciência da Computação. Foco em APIs, lógica e sistemas bem estruturados.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://seudominio.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #8b5cf6;
+  --secondary: #22d3ee;
+  --bg-main: #0b061a;
+  --bg-section: rgba(255,255,255,0.04);
+  --text-main: #ffffff;
+  --text-muted: #c7c3e0;
+  --border: rgba(255,255,255,0.1);
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #140b2e, #090411);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(11,6,26,0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+  margin-left: 26px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: translateX(-50%);
+  transition: .3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 120px 8% 100px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: auto;
+  font-size: 15px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.4rem;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 18px;
+  color: var(--text-muted);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  margin-top: 36px;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 14px 36px;
+  margin: 10px;
+  border-radius: 28px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+
+/* ================= CODE TYPING ================= */
+.code-typing {
+  margin-top: 46px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+/* ================= GRID / CARDS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ================= SKILLS ================= */
+.skill-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.skill-title.hard {
+  color: var(--primary);
+}
+
+.skill-title.soft {
+  color: var(--secondary);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skills span {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  max-width: 720px;
+  margin: auto;
+  border-left: 2px solid var(--primary);
+  padding-left: 36px;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+/* ================= REVEAL ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Kc.dev</div>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero reveal">
+  <div>
+    <h1>Kauã <span>Carlos Leme</span></h1>
+    <p>Desenvolvedor Back-end • Estudante de Ciência da Computação</p>
+    <p>Desenvolvedor Web (Front-End e Back-End) em formação, com foco na criação de sites institucionais, landing pages e soluções digitais completas. Atua com HTML, CSS, JavaScript e tecnologias de back-end, priorizando organização, performance, segurança básica e experiência do usuário.</p>
+
+    <div class="buttons">
+      <a href="#contato" class="btn-primary">Entrar em contato</a>
+      <a href="#projetos" class="btn-outline">Ver projetos</a>
+    </div>
+
+    <div class="code-typing"><span id="typing"></span></div>
+  </div>
+</section>
+
+<section id="sobre" class="reveal">
+  <div class="section-header">
+    <h2>Sobre mim</h2>
+    <p>Quem sou e como penso desenvolvimento</p>
+  </div>
+  <p style="max-width:820px;margin:auto;color:var(--text-muted);text-align:center">
+    Sou estudante de Ciência da Computação e desenvolvedor web em formação, com atuação em front-end e back-end. Trabalho com criação de interfaces e lógica de sistema, buscando sempre código limpo, soluções eficientes e projetos bem estruturados.
+  </p>
+</section>
+
+<section id="habilidades" class="reveal">
+  <div class="section-header">
+    <h2>Habilidades</h2>
+    <p>Conhecimentos técnicos e competências pessoais</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="skill-title hard">Hard Skills</h3>
+      <div class="skills">
+        <span>Python</span>
+        <span>APIs REST</span>
+        <span>Lógica de Programação</span>
+        <span>Git & GitHub</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="skill-title soft">Soft Skills</h3>
+      <div class="skills">
+        <span>Comunicação</span>
+        <span>Trabalho em equipe</span>
+        <span>Organização</span>
+        <span>Responsabilidade</span>
+        <span>Vontade de aprender</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos" class="reveal">
+  <div class="section-header">
+    <h2>Projetos</h2>
+    <p>Experiências práticas e acadêmicas</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Shinu Service</h3>
+      <p>Site institucional focado em estrutura, clareza e conversão, desenvolvido com HTML, CSS e JavaScript.
+        <br>
+        <br>
+       A Shinu Service foi criada para aplicar conhecimentos acadêmicos em projetos reais, desenvolvendo sites profissionais e ajudando pequenos negócios a conquistarem presença digital de forma simples e eficiente.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Projetos Acadêmicos</h3>
+      <p>Projetos desenvolvidos durante a graduação em Ciência da Computação, envolvendo lógica de programação, estruturação de sistemas, front-end e back-end, com foco em aprendizado prático e boas práticas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="formacao" class="reveal">
+  <div class="section-header">
+    <h2>Formação</h2>
+    <p>Minha trajetória educacional</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Ciência da Computação — USCS</h3>
+      <p>Cursando</p>
+    </div>
+    <div class="timeline-item">
+      <h3>SENAI — Web Designer / Front-end</h3>
+    </div>
+    <div class="timeline-item">
+      <h3>Cisco — Linguagens de Programação back-end</h3>
+    </div>
+    <div class="timeline-item">
+      <h3>Fisk - Curso de Inglês</h3>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="reveal">
+  <div class="section-header">
+    <h2>Contato</h2>
+    <p>Vamos conversar</p>
+  </div>
+
+  <div class="buttons" style="text-align:center">
+    <a class="btn-primary" href="">WhatsApp</a>
+    <a class="btn-outline" href="https://www.instagram.com/devshinu_/">Instagram</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 • Kauã Carlos Leme
+</footer>
+
+<script>
+/* Reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* Typing */
+const codeLines = [
+  "def create_api():",
+  "  validate_data()",
+  "  connect_database()",
+  "  return response"
+];
+
+let line = 0, char = 0;
+const typing = document.getElementById("typing");
+
+function typeEffect() {
+  if (char < codeLines[line].length) {
+    typing.textContent += codeLines[line][char++];
+    setTimeout(typeEffect, 55);
+  } else {
+    setTimeout(() => {
+      typing.textContent = "";
+      char = 0;
+      line = (line + 1) % codeLines.length;
+      typeEffect();
+    }, 1200);
+  }
+}
+typeEffect();
+</script>
+
+</body>
+</html>
