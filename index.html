@@ -10,6 +10,15 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0b061a">
 
+<!-- Open Graph / Facebook / WhatsApp (Card de Compartilhamento) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kauã Carlos Leme | Desenvolvedor Back-end">
+<meta property="og:description" content="Transformando lógica complexa em soluções simples. Python, APIs e Web.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000">
+
+<!-- Favicon (Ícone da aba - Terminal) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
 <!-- Fontes Google -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +62,7 @@ header {
   z-index: 1000;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -73,6 +83,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 .logo span { color: var(--primary); }
 
@@ -364,9 +375,9 @@ footer {
 
 <header>
   <nav>
-    <div class="logo">
+    <a href="#" class="logo">
       <span>&lt;</span>Kauã.dev<span>/&gt;</span>
-    </div>
+    </a>
     
     <button class="mobile-btn" aria-label="Abrir menu">
       <span></span><span></span><span></span>
@@ -488,7 +499,7 @@ footer {
         <span class="skill-tag">CSS</span>
         <span class="skill-tag">JS</span>
       </div>
-      <!-- Adicione o link real aqui -->
+      <!-- Sugestão: Se você já tiver o link do Shinu Service no ar, coloque aqui no href -->
       <a href="#" class="btn-outline" style="padding: 8px 16px; border-radius: 8px; font-size: 0.9rem;">Ver Projeto &nearr;</a>
     </div>
 
@@ -503,6 +514,7 @@ footer {
         <span class="skill-tag">Lógica</span>
         <span class="skill-tag">Algoritmos</span>
       </div>
+      <!-- Lembre-se de colocar seu link do GitHub aqui -->
       <a href="https://github.com/SEU_USUARIO" class="btn-outline" style="padding: 8px 16px; border-radius: 8px; font-size: 0.9rem;">Ver no GitHub &nearr;</a>
     </div>
   </div>
@@ -539,11 +551,11 @@ footer {
   </div>
 
   <div class="contact-container">
-    <a href="https://wa.me/11950497851" target="_blank" class="contact-card">
+    <a href="https://wa.me/5511950497851" target="_blank" class="contact-card">
       <h3>WhatsApp</h3>
       <p>Envie uma mensagem direta</p>
     </a>
-    <a href="https://www.linkedin.com/in/kau%C3%A3-carlos-2835422b6/recent-activity/all/" target="_blank" class="contact-card">
+    <a href="https://www.linkedin.com/in/kau%C3%A3-carlos-2835422b6/" target="_blank" class="contact-card">
       <h3>LinkedIn</h3>
       <p>Conecte-se profissionalmente</p>
     </a>
@@ -656,4 +668,5 @@ setTimeout(typeCode, 1000);
 
 </body>
 </html>
+
 
